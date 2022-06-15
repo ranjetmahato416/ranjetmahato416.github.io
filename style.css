@@ -182,15 +182,18 @@ section .title::after{
 }
 .home .home-content .text-1{
     font-size: 27px;
+    color: #111;
 }
 .home .home-content .text-2{
     font-size: 75px;
     font-weight: 600;
     margin-left: -3px;
+    color: #111;
 }
 .home .home-content .text-3{
     font-size: 40px;
     margin: 5px 0;
+    color: #111;
 }
 .home .home-content .text-3 span{
     color: crimson;
@@ -221,7 +224,7 @@ section .title::after{
     width: 45%;
 }
 .about .about-content .left img{
-    height: 400px;
+    height: 500px;
     width: 400px;
     object-fit: cover;
     border-radius: 6px;
