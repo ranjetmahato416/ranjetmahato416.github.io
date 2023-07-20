@@ -374,13 +374,13 @@ section .title::after{
 .skills-content .right .js::before{
     width: 50%;
 }
-.skills-content .right .react::before{
+.skills-content .right .angular::before{
     width: 70%;
 }
-.skills-content .right .python::before{
-    width: 50%;
+.skills-content .right .tailwind::before{
+    width: 80%;
 }
-.skills-content .right .django::before{
+.skills-content .right .csharp::before{
     width: 40%;
 }
 
