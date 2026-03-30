@@ -179,7 +179,7 @@
       min-height: calc(100vh - 60px);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       flex-wrap: wrap;
       padding: 80px 6% 0; /* avoid navbar overlap */
       position: relative;
@@ -196,6 +196,11 @@
       background-size: 50px 50px;
       opacity: 0.25;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      animation: grid-shift 20s linear infinite;
+    }
+    @keyframes grid-shift {
+      0% { background-position: 0 0; }
+      100% { background-position: 50px 50px; }
     }
     .hero-glow {
       position: absolute;
@@ -203,10 +208,159 @@
       width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(0,229,195,0.06) 0%, transparent 65%);
       pointer-events: none;
+      animation: glow-pulse 4s ease-in-out infinite alternate;
+    }
+    @keyframes glow-pulse {
+      0% { opacity: 0.3; transform: scale(1); }
+      100% { opacity: 0.6; transform: scale(1.05); }
+    }
+    .floating-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle {
+      position: absolute;
+      background: var(--teal);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 6s ease-in-out infinite;
+    }
+    .particle:nth-child(1) { width: 4px; height: 4px; top: 10%; left: 20%; animation-delay: 0s; }
+    .particle:nth-child(2) { width: 6px; height: 6px; top: 30%; left: 70%; animation-delay: 1s; }
+    .particle:nth-child(3) { width: 3px; height: 3px; top: 50%; left: 10%; animation-delay: 2s; }
+    .particle:nth-child(4) { width: 5px; height: 5px; top: 70%; left: 80%; animation-delay: 3s; }
+    .particle:nth-child(5) { width: 4px; height: 4px; top: 20%; left: 90%; animation-delay: 4s; }
+    .particle:nth-child(6) { width: 7px; height: 7px; top: 60%; left: 40%; animation-delay: 5s; }
+    .particle:nth-child(7) { width: 3px; height: 3px; top: 80%; left: 30%; animation-delay: 0.5s; }
+    .particle:nth-child(8) { width: 5px; height: 5px; top: 40%; left: 60%; animation-delay: 1.5s; }
+    .particle:nth-child(9) { width: 4px; height: 4px; top: 15%; left: 50%; animation-delay: 2.5s; }
+    .particle:nth-child(10) { width: 6px; height: 6px; top: 85%; left: 15%; animation-delay: 3.5s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+      25% { transform: translateY(-20px) translateX(10px) scale(1.1); opacity: 0.6; }
+      50% { transform: translateY(-10px) translateX(-10px) scale(0.9); opacity: 0.4; }
+      75% { transform: translateY(10px) translateX(5px) scale(1.2); opacity: 0.7; }
+    }
+
+    /* About section particles */
+    .floating-particles-about {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle-about {
+      position: absolute;
+      background: #00a5ff; /* blue */
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: float-about 8s ease-in-out infinite;
+    }
+    .particle-about:nth-child(1) { width: 3px; height: 3px; top: 20%; left: 70%; animation-delay: 0s; }
+    .particle-about:nth-child(2) { width: 5px; height: 5px; top: 60%; left: 30%; animation-delay: 2s; }
+    .particle-about:nth-child(3) { width: 4px; height: 4px; top: 80%; left: 80%; animation-delay: 4s; }
+    @keyframes float-about {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+      33% { transform: translateY(-15px) translateX(-5px) scale(1.1); opacity: 0.5; }
+      66% { transform: translateY(10px) translateX(10px) scale(0.9); opacity: 0.3; }
+    }
+
+    /* Experience section particles */
+    .floating-particles-exp {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle-exp {
+      position: absolute;
+      background: var(--amber);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float-exp 7s ease-in-out infinite;
+    }
+    .particle-exp:nth-child(1) { width: 4px; height: 4px; top: 15%; left: 10%; animation-delay: 0s; }
+    .particle-exp:nth-child(2) { width: 6px; height: 6px; top: 40%; left: 85%; animation-delay: 1.5s; }
+    .particle-exp:nth-child(3) { width: 3px; height: 3px; top: 70%; left: 50%; animation-delay: 3s; }
+    .particle-exp:nth-child(4) { width: 5px; height: 5px; top: 90%; left: 25%; animation-delay: 4.5s; }
+    @keyframes float-exp {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+      25% { transform: translateY(-25px) translateX(15px) scale(1.2); opacity: 0.5; }
+      50% { transform: translateY(15px) translateX(-10px) scale(0.8); opacity: 0.3; }
+      75% { transform: translateY(-10px) translateX(5px) scale(1.1); opacity: 0.4; }
+    }
+
+    /* Skills section particles */
+    .floating-particles-skills {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle-skills {
+      position: absolute;
+      background: #00e5c3; /* teal */
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float-skills 9s ease-in-out infinite;
+    }
+    .particle-skills:nth-child(1) { width: 4px; height: 4px; top: 30%; left: 60%; animation-delay: 0s; }
+    .particle-skills:nth-child(2) { width: 6px; height: 6px; top: 70%; left: 20%; animation-delay: 3s; }
+    @keyframes float-skills {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+      50% { transform: translateY(-20px) translateX(20px) scale(1.3); opacity: 0.5; }
+    }
+
+    /* Projects section particles */
+    .floating-particles-proj {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle-proj {
+      position: absolute;
+      background: var(--teal);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float-proj 10s ease-in-out infinite;
+    }
+    .particle-proj:nth-child(1) { width: 4px; height: 4px; top: 25%; left: 75%; animation-delay: 0s; }
+    .particle-proj:nth-child(2) { width: 5px; height: 5px; top: 75%; left: 40%; animation-delay: 5s; }
+    @keyframes float-proj {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+      50% { transform: translateY(-30px) translateX(-15px) scale(1.4); opacity: 0.6; }
+    }
+
+    /* Contact section particles */
+    .floating-particles-contact {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle-contact {
+      position: absolute;
+      background: #f5a623; /* amber */
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: float-contact 8s ease-in-out infinite;
+    }
+    .particle-contact:nth-child(1) { width: 3px; height: 3px; top: 20%; left: 80%; animation-delay: 0s; }
+    .particle-contact:nth-child(2) { width: 4px; height: 4px; top: 50%; left: 10%; animation-delay: 2s; }
+    .particle-contact:nth-child(3) { width: 5px; height: 5px; top: 80%; left: 60%; animation-delay: 4s; }
+    @keyframes float-contact {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+      25% { transform: translateY(20px) translateX(10px) scale(1.2); opacity: 0.5; }
+      50% { transform: translateY(-10px) translateX(-5px) scale(0.8); opacity: 0.3; }
+      75% { transform: translateY(15px) translateX(5px) scale(1.1); opacity: 0.4; }
     }
     .profile-picture {
-      flex: 0 0 auto;
-      position: relative;
+      position: absolute;
+      top: 80px;
+      right: 6%;
       z-index: 2;
     }
     .profile-img {
@@ -974,12 +1128,49 @@
     .reveal-d2 { transition-delay: 0.2s; }
     .reveal-d3 { transition-delay: 0.3s; }
 
+    /* Additional section animations */
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .slide-left.visible { opacity: 1; transform: translateX(0); }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .slide-right.visible { opacity: 1; transform: translateX(0); }
+
+    .slide-up {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .slide-up.visible { opacity: 1; transform: translateY(0); }
+
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .zoom-in.visible { opacity: 1; transform: scale(1); }
+
+    .slide-down {
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .slide-down.visible { opacity: 1; transform: translateY(0); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 0 4%; }
       .nav-links { display: none; }
       section { padding: 70px 5%; }
       #hero { padding: 0 5%; flex-direction: column; text-align: center; }
+      .profile-picture { position: relative; top: auto; right: auto; margin-top: 2rem; }
       .profile-img { width: 200px; height: 200px; }
       .about-wrap, .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
       footer { flex-direction: column; text-align: center; }
@@ -1058,6 +1249,18 @@
   <section id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
+    <div class="floating-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
     <div class="hero-content">
       <div class="hero-mono">// full-stack software engineer · london, uk</div>
       <h1 class="hero-name">Ranjeet<br><span class="dim">Kumar</span><br>Mahato</h1>
@@ -1124,7 +1327,12 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="about-wrap">
+    <div class="floating-particles-about">
+      <div class="particle-about"></div>
+      <div class="particle-about"></div>
+      <div class="particle-about"></div>
+    </div>
+    <div class="about-wrap slide-left">
       <div class="about-bio reveal">
         <div class="sec-label">About</div>
         <h2 class="sec-title">Building enterprise software that scales.</h2>
@@ -1177,10 +1385,17 @@
 
   <!-- EXPERIENCE -->
   <section id="experience">
+    <div class="floating-particles-exp">
+      <div class="particle-exp"></div>
+      <div class="particle-exp"></div>
+      <div class="particle-exp"></div>
+      <div class="particle-exp"></div>
+    </div>
     <div class="sec-label">Experience</div>
     <h2 class="sec-title">Career</h2>
     <p class="sec-sub">3+ years building enterprise-grade ERP, POS, and distributed systems for Nepal's largest retail and FMCG companies.</p>
 
+    <div class="exp-wrap slide-right">
     <div class="exp-grid">
 
       <div class="exp-card reveal">
@@ -1241,15 +1456,20 @@
       </div>
 
     </div>
+    </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
+    <div class="floating-particles-skills">
+      <div class="particle-skills"></div>
+      <div class="particle-skills"></div>
+    </div>
     <div class="sec-label">Skills</div>
     <h2 class="sec-title">Tech Stack</h2>
     <p class="sec-sub">Commercially proven across the full delivery lifecycle — UI to database to cloud.</p>
 
-    <div class="skills-wrap reveal">
+    <div class="skills-wrap slide-up">
       <div class="skill-group">
         <div class="skill-group-title">Languages</div>
         <div class="pill-wrap">
@@ -1331,7 +1551,7 @@
     <h2 class="sec-title">Achievements</h2>
     <p class="sec-sub">Professional certifications and badges earned.</p>
 
-    <div class="certifications-wrap reveal">
+    <div class="certifications-wrap zoom-in">
       <div class="cert-card">
         <h3><i class="fas fa-calculator"></i> MATLAB Certification</h3>
         <p>Completed MATLAB Academy Onramp and Advanced courses. Built custom neural networks including AlexNet and CNN models for machine vision using Kaggle datasets. Evaluated model accuracy and confusion matrices.</p>
@@ -1345,10 +1565,15 @@
 
   <!-- PROJECTS -->
   <section id="projects">
+    <div class="floating-particles-proj">
+      <div class="particle-proj"></div>
+      <div class="particle-proj"></div>
+    </div>
     <div class="sec-label">Projects</div>
     <h2 class="sec-title">Selected Work</h2>
     <p class="sec-sub">Academic and personal projects applying engineering rigour to real-world problems.</p>
 
+    <div class="projects-wrap slide-down">
     <div class="proj-grid">
       <div class="proj-card reveal">
         <div class="proj-bg-icon"><i class="fas fa-brain"></i></div>
@@ -1392,11 +1617,17 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="contact-wrap">
+    <div class="floating-particles-contact">
+      <div class="particle-contact"></div>
+      <div class="particle-contact"></div>
+      <div class="particle-contact"></div>
+    </div>
+    <div class="contact-wrap slide-left">
       <div>
         <div class="sec-label">Contact</div>
         <h2 class="sec-title">Let's connect.</h2>
@@ -1500,7 +1731,7 @@
         }
       });
     }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal, .slide-left, .slide-right, .slide-up, .zoom-in, .slide-down').forEach(el => observer.observe(el));
 
     // Active nav
     const sections = document.querySelectorAll('section[id]');
