@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ranjeet Kumar Mahato — Full-Stack Software Engineer</title>
+  <title>Ranjeet Kumar Mahato — Angular Frontend Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inconsolata:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
@@ -179,7 +179,7 @@
       min-height: calc(100vh - 60px);
       display: flex;
       align-items: center;
-      /* justify-content: space-between; */
+      justify-content: space-between;
       flex-wrap: wrap;
       padding: 80px 6% 0; /* avoid navbar overlap */
       position: relative;
@@ -196,11 +196,6 @@
       background-size: 50px 50px;
       opacity: 0.25;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-      animation: grid-shift 20s linear infinite;
-    }
-    @keyframes grid-shift {
-      0% { background-position: 0 0; }
-      100% { background-position: 50px 50px; }
     }
     .hero-glow {
       position: absolute;
@@ -208,159 +203,10 @@
       width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(0,229,195,0.06) 0%, transparent 65%);
       pointer-events: none;
-      animation: glow-pulse 4s ease-in-out infinite alternate;
-    }
-    @keyframes glow-pulse {
-      0% { opacity: 0.3; transform: scale(1); }
-      100% { opacity: 0.6; transform: scale(1.05); }
-    }
-    .floating-particles {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .particle {
-      position: absolute;
-      background: var(--teal);
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: float 6s ease-in-out infinite;
-    }
-    .particle:nth-child(1) { width: 4px; height: 4px; top: 10%; left: 20%; animation-delay: 0s; }
-    .particle:nth-child(2) { width: 6px; height: 6px; top: 30%; left: 70%; animation-delay: 1s; }
-    .particle:nth-child(3) { width: 3px; height: 3px; top: 50%; left: 10%; animation-delay: 2s; }
-    .particle:nth-child(4) { width: 5px; height: 5px; top: 70%; left: 80%; animation-delay: 3s; }
-    .particle:nth-child(5) { width: 4px; height: 4px; top: 20%; left: 90%; animation-delay: 4s; }
-    .particle:nth-child(6) { width: 7px; height: 7px; top: 60%; left: 40%; animation-delay: 5s; }
-    .particle:nth-child(7) { width: 3px; height: 3px; top: 80%; left: 30%; animation-delay: 0.5s; }
-    .particle:nth-child(8) { width: 5px; height: 5px; top: 40%; left: 60%; animation-delay: 1.5s; }
-    .particle:nth-child(9) { width: 4px; height: 4px; top: 15%; left: 50%; animation-delay: 2.5s; }
-    .particle:nth-child(10) { width: 6px; height: 6px; top: 85%; left: 15%; animation-delay: 3.5s; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
-      25% { transform: translateY(-20px) translateX(10px) scale(1.1); opacity: 0.6; }
-      50% { transform: translateY(-10px) translateX(-10px) scale(0.9); opacity: 0.4; }
-      75% { transform: translateY(10px) translateX(5px) scale(1.2); opacity: 0.7; }
-    }
-
-    /* About section particles */
-    .floating-particles-about {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .particle-about {
-      position: absolute;
-      background: #00a5ff; /* blue */
-      border-radius: 50%;
-      opacity: 0.4;
-      animation: float-about 8s ease-in-out infinite;
-    }
-    .particle-about:nth-child(1) { width: 3px; height: 3px; top: 20%; left: 70%; animation-delay: 0s; }
-    .particle-about:nth-child(2) { width: 5px; height: 5px; top: 60%; left: 30%; animation-delay: 2s; }
-    .particle-about:nth-child(3) { width: 4px; height: 4px; top: 80%; left: 80%; animation-delay: 4s; }
-    @keyframes float-about {
-      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
-      33% { transform: translateY(-15px) translateX(-5px) scale(1.1); opacity: 0.5; }
-      66% { transform: translateY(10px) translateX(10px) scale(0.9); opacity: 0.3; }
-    }
-
-    /* Experience section particles */
-    .floating-particles-exp {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .particle-exp {
-      position: absolute;
-      background: var(--amber);
-      border-radius: 50%;
-      opacity: 0.3;
-      animation: float-exp 7s ease-in-out infinite;
-    }
-    .particle-exp:nth-child(1) { width: 4px; height: 4px; top: 15%; left: 10%; animation-delay: 0s; }
-    .particle-exp:nth-child(2) { width: 6px; height: 6px; top: 40%; left: 85%; animation-delay: 1.5s; }
-    .particle-exp:nth-child(3) { width: 3px; height: 3px; top: 70%; left: 50%; animation-delay: 3s; }
-    .particle-exp:nth-child(4) { width: 5px; height: 5px; top: 90%; left: 25%; animation-delay: 4.5s; }
-    @keyframes float-exp {
-      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
-      25% { transform: translateY(-25px) translateX(15px) scale(1.2); opacity: 0.5; }
-      50% { transform: translateY(15px) translateX(-10px) scale(0.8); opacity: 0.3; }
-      75% { transform: translateY(-10px) translateX(5px) scale(1.1); opacity: 0.4; }
-    }
-
-    /* Skills section particles */
-    .floating-particles-skills {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .particle-skills {
-      position: absolute;
-      background: #00e5c3; /* teal */
-      border-radius: 50%;
-      opacity: 0.3;
-      animation: float-skills 9s ease-in-out infinite;
-    }
-    .particle-skills:nth-child(1) { width: 4px; height: 4px; top: 30%; left: 60%; animation-delay: 0s; }
-    .particle-skills:nth-child(2) { width: 6px; height: 6px; top: 70%; left: 20%; animation-delay: 3s; }
-    @keyframes float-skills {
-      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
-      50% { transform: translateY(-20px) translateX(20px) scale(1.3); opacity: 0.5; }
-    }
-
-    /* Projects section particles */
-    .floating-particles-proj {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .particle-proj {
-      position: absolute;
-      background: var(--teal);
-      border-radius: 50%;
-      opacity: 0.3;
-      animation: float-proj 10s ease-in-out infinite;
-    }
-    .particle-proj:nth-child(1) { width: 4px; height: 4px; top: 25%; left: 75%; animation-delay: 0s; }
-    .particle-proj:nth-child(2) { width: 5px; height: 5px; top: 75%; left: 40%; animation-delay: 5s; }
-    @keyframes float-proj {
-      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
-      50% { transform: translateY(-30px) translateX(-15px) scale(1.4); opacity: 0.6; }
-    }
-
-    /* Contact section particles */
-    .floating-particles-contact {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .particle-contact {
-      position: absolute;
-      background: #f5a623; /* amber */
-      border-radius: 50%;
-      opacity: 0.4;
-      animation: float-contact 8s ease-in-out infinite;
-    }
-    .particle-contact:nth-child(1) { width: 3px; height: 3px; top: 20%; left: 80%; animation-delay: 0s; }
-    .particle-contact:nth-child(2) { width: 4px; height: 4px; top: 50%; left: 10%; animation-delay: 2s; }
-    .particle-contact:nth-child(3) { width: 5px; height: 5px; top: 80%; left: 60%; animation-delay: 4s; }
-    @keyframes float-contact {
-      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
-      25% { transform: translateY(20px) translateX(10px) scale(1.2); opacity: 0.5; }
-      50% { transform: translateY(-10px) translateX(-5px) scale(0.8); opacity: 0.3; }
-      75% { transform: translateY(15px) translateX(5px) scale(1.1); opacity: 0.4; }
     }
     .profile-picture {
-      position: absolute;
-      top: 80px;
-      right: 6%;
+      flex: 0 0 auto;
+      position: relative;
       z-index: 2;
     }
     .profile-img {
@@ -700,6 +546,8 @@
     }
     .btn-teal { background: var(--teal); color: var(--bg); border: 1px solid var(--teal); }
     .btn-teal:hover { background: transparent; color: var(--teal); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.15); }
+    .btn-ghost:hover { color: var(--teal); border-color: var(--teal); }
     .btn.active {
       background: var(--teal);
       color: var(--bg);
@@ -1128,49 +976,12 @@
     .reveal-d2 { transition-delay: 0.2s; }
     .reveal-d3 { transition-delay: 0.3s; }
 
-    /* Additional section animations */
-    .slide-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .slide-left.visible { opacity: 1; transform: translateX(0); }
-
-    .slide-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .slide-right.visible { opacity: 1; transform: translateX(0); }
-
-    .slide-up {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .slide-up.visible { opacity: 1; transform: translateY(0); }
-
-    .zoom-in {
-      opacity: 0;
-      transform: scale(0.8);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .zoom-in.visible { opacity: 1; transform: scale(1); }
-
-    .slide-down {
-      opacity: 0;
-      transform: translateY(-50px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .slide-down.visible { opacity: 1; transform: translateY(0); }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 0 4%; }
       .nav-links { display: none; }
       section { padding: 70px 5%; }
       #hero { padding: 0 5%; flex-direction: column; text-align: center; }
-      .profile-picture { position: relative; top: auto; right: auto; margin-top: 2rem; }
       .profile-img { width: 200px; height: 200px; }
       .about-wrap, .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
       footer { flex-direction: column; text-align: center; }
@@ -1187,6 +998,7 @@
     <a class="nav-logo" href="#hero">RKM.dev</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#core">Expertise</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certifications">Certifications</a></li>
@@ -1249,23 +1061,11 @@
   <section id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
-    <div class="floating-particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-    </div>
     <div class="hero-content">
-      <div class="hero-mono">// full-stack software engineer · london, uk</div>
+      <div class="hero-mono">// Angular front-end engineer · responsive UI · reusable component architecture</div>
       <h1 class="hero-name">Ranjeet<br><span class="dim">Kumar</span><br>Mahato</h1>
       <p class="hero-role">
-        Angular · ASP.NET Core · Python ·
+        Angular · TypeScript · RxJS · Responsive UI · Performance Optimisation ·
         <span class="hi">[ MSc CS @ UEL ]</span>
       </p>
       <div class="hero-metrics">
@@ -1327,23 +1127,18 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="floating-particles-about">
-      <div class="particle-about"></div>
-      <div class="particle-about"></div>
-      <div class="particle-about"></div>
-    </div>
-    <div class="about-wrap slide-left">
+    <div class="about-wrap">
       <div class="about-bio reveal">
         <div class="sec-label">About</div>
         <h2 class="sec-title">Building enterprise software that scales.</h2>
         <p>
-          I'm a <strong>full-stack software engineer</strong> with 3+ years of commercial experience delivering ERP, POS, and distributed systems for large-scale clients — including <strong>Bhat-Bhateni Supermarket</strong> (Nepal's largest retail chain), <strong>Dabur</strong>, and <strong>Nestlé Nepal</strong>.
+          I'm a <strong>frontend-focused software developer</strong> specialising in Angular application delivery, reusable UI component architecture, and responsive enterprise-grade interfaces. I design maintainable frontends that balance performance, accessibility, and polished UX.
         </p>
         <p>
-          Currently pursuing an <strong>MSc in Computer Science</strong> at the University of East London, specialising in Cloud Computing, Big Data Analytics, and Machine Vision & AI. Seeking a <strong>12-month industrial placement</strong> from September 2026.
+          I have 3+ years of commercial experience building ERP, POS, and SaaS interfaces for large operations including <strong>Bhat-Bhateni Supermarket</strong>, <strong>Dabur</strong>, and <strong>Nestlé Nepal</strong>. Currently pursuing an <strong>MSc Computer Science</strong> at the University of East London.
         </p>
         <p>
-          Valid UK Student Visa — <strong>authorised to work without sponsorship</strong>.
+          Available for frontend engineering and graduate software developer opportunities in the UK from September 2026. <strong>Right to work in the UK without sponsorship.</strong>
         </p>
         <div class="stat-row">
           <div class="stat-box">
@@ -1383,19 +1178,53 @@
     </div>
   </section>
 
+  <!-- CORE EXPERTISE -->
+  <section id="core">
+    <div class="sec-label">Core Expertise</div>
+    <h2 class="sec-title">Angular & Frontend Specialisation</h2>
+    <p class="sec-sub">Focused on Angular architecture, UI engineering, responsive web design, and high-performance frontend delivery.</p>
+    <div class="stat-row reveal">
+      <div class="stat-box">
+        <div class="stat-box-label">Angular Development</div>
+        <div class="stat-box-val">Scalable component architecture, RxJS, services, lazy-loading</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-label">TypeScript</div>
+        <div class="stat-box-val">Strong typing, reusable models, clean frontend architecture</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-label">Responsive UI</div>
+        <div class="stat-box-val">Mobile-first layouts, adaptive breakpoints, modern component design</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-label">UI/UX Implementation</div>
+        <div class="stat-box-val">Accessible interfaces, polished micro-interactions, business clarity</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-label">REST API Integration</div>
+        <div class="stat-box-val">Angular services, HTTP clients, token auth and backend wiring</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-label">Performance Optimisation</div>
+        <div class="stat-box-val">Bundle and load performance, optimized templates, reusable code</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-label">Component Reuse</div>
+        <div class="stat-box-val">Module-based UI libraries, shared components, consistent design</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-label">Git & CI/CD</div>
+        <div class="stat-box-val">Source control, branch workflow, automated build support</div>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="floating-particles-exp">
-      <div class="particle-exp"></div>
-      <div class="particle-exp"></div>
-      <div class="particle-exp"></div>
-      <div class="particle-exp"></div>
-    </div>
     <div class="sec-label">Experience</div>
     <h2 class="sec-title">Career</h2>
     <p class="sec-sub">3+ years building enterprise-grade ERP, POS, and distributed systems for Nepal's largest retail and FMCG companies.</p>
 
-    <div class="exp-wrap slide-right">
     <div class="exp-grid">
 
       <div class="exp-card reveal">
@@ -1456,20 +1285,15 @@
       </div>
 
     </div>
-    </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="floating-particles-skills">
-      <div class="particle-skills"></div>
-      <div class="particle-skills"></div>
-    </div>
     <div class="sec-label">Skills</div>
     <h2 class="sec-title">Tech Stack</h2>
     <p class="sec-sub">Commercially proven across the full delivery lifecycle — UI to database to cloud.</p>
 
-    <div class="skills-wrap slide-up">
+    <div class="skills-wrap reveal">
       <div class="skill-group">
         <div class="skill-group-title">Languages</div>
         <div class="pill-wrap">
@@ -1486,6 +1310,7 @@
         <div class="skill-group-title">Frontend</div>
         <div class="pill-wrap">
           <span class="pill strong"><i class="fab fa-angular skill-icon icon-angular"></i> Angular (v14+)</span>
+          <span class="pill strong"><i class="fab fa-js-square skill-icon icon-typescript"></i> TypeScript</span>
           <span class="pill strong"><i class="fas fa-stream skill-icon icon-rxjs"></i> RxJS</span>
           <span class="pill strong"><i class="fab fa-angular skill-icon icon-angular"></i> Angular Material</span>
           <span class="pill"><i class="fab fa-css3-alt skill-icon icon-tailwind"></i> Tailwind CSS</span>
@@ -1551,87 +1376,101 @@
     <h2 class="sec-title">Achievements</h2>
     <p class="sec-sub">Professional certifications and badges earned.</p>
 
-    <div class="certifications-wrap zoom-in">
+    <div class="certifications-wrap reveal">
       <div class="cert-card">
         <h3><i class="fas fa-calculator"></i> MATLAB Certification</h3>
         <p>Completed MATLAB Academy Onramp and Advanced courses. Built custom neural networks including AlexNet and CNN models for machine vision using Kaggle datasets. Evaluated model accuracy and confusion matrices.</p>
       </div>
       <div class="cert-card">
         <h3><i class="fab fa-aws"></i> AWS Academy Graduate - Cloud Foundations</h3>
-        <p>Training Badge issued by Amazon Web Services Training and Certification to Ranjeet Kumar Mahato. <a href="https://credly.com" target="_blank" rel="noopener noreferrer">View on Credly</a></p>
+        <p>Training Badge issued by Amazon Web Services Training and Certification to Ranjeet Kumar Mahato. <a href="https://www.credly.com/badges/e3675206-7d10-4b88-83ab-3855f4f62aba/linked_in?t=tcibkt" target="_blank" rel="noopener noreferrer">View on Credly</a></p>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="floating-particles-proj">
-      <div class="particle-proj"></div>
-      <div class="particle-proj"></div>
-    </div>
     <div class="sec-label">Projects</div>
     <h2 class="sec-title">Selected Work</h2>
-    <p class="sec-sub">Academic and personal projects applying engineering rigour to real-world problems.</p>
+    <p class="sec-sub">MSc coursework and group projects demonstrating machine learning, AI chatbots, ETL pipelines, and data engineering expertise.</p>
 
-    <div class="projects-wrap slide-down">
     <div class="proj-grid">
       <div class="proj-card reveal">
-        <div class="proj-bg-icon"><i class="fas fa-brain"></i></div>
+        <div class="proj-bg-icon"><i class="fas fa-comments"></i></div>
         <div class="proj-num">01</div>
-        <div class="proj-title">Lung Cancer Classification from CT Scans</div>
-        <p class="proj-desc">Transfer learning model (ResNet50) on TensorFlow/Keras to classify lung cancer types from chest CT images. Covers data preprocessing, augmentation, model training, and evaluation — fully commented for academic reproducibility.</p>
+        <div class="proj-title">NHS Medical Chatbot</div>
+        <p class="proj-desc">Developed an NHS-aligned AI medical chatbot using NLP and Gemini Pro API for healthcare guidance, with responsive UI and modular backend architecture.</p>
+        <div class="proj-stack">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Flask</span>
+          <span class="proj-tag">Gemini API</span>
+          <span class="proj-tag">NLP</span>
+          <span class="proj-tag">SQL</span>
+          <span class="proj-tag">REST APIs</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built NHS-aligned chatbot for basic healthcare guidance using NLP and pretrained medical knowledge base.</li>
+          <li>Integrated Gemini Pro API for fallback responses to unsupported queries.</li>
+          <li>Redesigned UI for improved responsiveness and conversational usability.</li>
+          <li>Collaborated in 4-member Agile team with Git version control and modular practices.</li>
+          <li>Handled API integration, frontend-backend communication, and workflow testing.</li>
+        </ul>
+        <a class="btn btn-teal" href="https://github.com/ranjetmahato416/NHS-MediChatBot" target="_blank" rel="noopener noreferrer">View Code</a>
+      </div>
+
+      <div class="proj-card reveal reveal-d1">
+        <div class="proj-bg-icon"><i class="fas fa-database"></i></div>
+        <div class="proj-num">02</div>
+        <div class="proj-title">Amazon Beauty Data ETL & Sentiment Analysis</div>
+        <p class="proj-desc">Implemented ETL pipeline for large-scale Amazon review data, performed sentiment analysis, and delivered visual dashboards for customer insights.</p>
+        <div class="proj-stack">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">SQL</span>
+          <span class="proj-tag">NLP</span>
+          <span class="proj-tag">ETL</span>
+          <span class="proj-tag">Data Viz</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Designed ETL pipeline for large-scale Amazon product and review data processing.</li>
+          <li>Applied data cleaning, transformation, and consistency checks for structured datasets.</li>
+          <li>Conducted sentiment analysis on customer reviews for actionable insights.</li>
+          <li>Performed statistical analysis including outlier detection and distribution checks.</li>
+          <li>Developed visual dashboards to communicate findings effectively.</li>
+        </ul>
+        <a class="btn btn-teal" href="https://github.com/ranjetmahato416/Amazon-Beauty-Data-ETL-Group-Project-" target="_blank" rel="noopener noreferrer">View Code</a>
+      </div>
+
+      <div class="proj-card reveal reveal-d2">
+        <div class="proj-bg-icon"><i class="fas fa-brain"></i></div>
+        <div class="proj-num">03</div>
+        <div class="proj-title">Lung Cancer Classification from Chest CT Scans</div>
+        <p class="proj-desc">Built deep learning classifier using transfer learning with EfficientNetB0, ResNet50, and DenseNet121, achieving 72.38% test accuracy.</p>
         <div class="proj-stack">
           <span class="proj-tag">Python</span>
           <span class="proj-tag">TensorFlow</span>
           <span class="proj-tag">Keras</span>
-          <span class="proj-tag">ResNet50</span>
-          <span class="proj-tag">Google Colab</span>
+          <span class="proj-tag">EfficientNet</span>
+          <span class="proj-tag">OpenCV</span>
         </div>
+        <ul class="exp-bullets">
+          <li>Developed multi-class lung cancer classifier using transfer learning on TensorFlow/Keras.</li>
+          <li>Implemented preprocessing and augmentation (resizing, normalization, rotation, zoom).</li>
+          <li>Applied class balancing, duplicate removal, and test-time augmentation for robustness.</li>
+          <li>Achieved 72.38% test accuracy with fine-tuned EfficientNetB0 model.</li>
+          <li>Evaluated using confusion matrices, classification reports, and visual metrics.</li>
+        </ul>
+        <a class="btn btn-teal" href="https://github.com/ranjetmahato416/Lung-Cancer-Classification-Using-Deep-Neural-Network" target="_blank" rel="noopener noreferrer">View Code</a>
       </div>
-
-      <div class="proj-card reveal reveal-d1">
-        <div class="proj-bg-icon"><i class="fab fa-aws"></i></div>
-        <div class="proj-num">02</div>
-        <div class="proj-title">AWS Finance & Trading Platform Architecture</div>
-        <p class="proj-desc">Production-grade cloud architecture for a finance/trading platform — EC2 Reserved Instances, RDS Aurora PostgreSQL Multi-AZ, ElastiCache Redis, Direct Connect, Kinesis Data Streams, CloudTrail + S3 WORM. Delivered architecture diagram, cost analysis, and Harvard-referenced research report.</p>
-        <div class="proj-stack">
-          <span class="proj-tag">AWS</span>
-          <span class="proj-tag">RDS Aurora</span>
-          <span class="proj-tag">Kinesis</span>
-          <span class="proj-tag">ElastiCache</span>
-          <span class="proj-tag">draw.io</span>
-        </div>
-      </div>
-
-      <div class="proj-card reveal reveal-d2">
-        <div class="proj-bg-icon"><i class="fas fa-comments"></i></div>
-        <div class="proj-num">03</div>
-        <div class="proj-title">NHS Medical Chatbot</div>
-        <p class="proj-desc">End-to-end NHS-aligned health guidance chatbot — database schema, RESTful API layer, NLP query processing, and frontend delivery. Applied clean architecture and UX best practices throughout.</p>
-        <div class="proj-stack">
-          <span class="proj-tag">Python</span>
-          <span class="proj-tag">REST APIs</span>
-          <span class="proj-tag">SQL</span>
-          <span class="proj-tag">NLP</span>
-          <span class="proj-tag">Git</span>
-        </div>
-      </div>
-    </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="floating-particles-contact">
-      <div class="particle-contact"></div>
-      <div class="particle-contact"></div>
-      <div class="particle-contact"></div>
-    </div>
-    <div class="contact-wrap slide-left">
+    <div class="contact-wrap">
       <div>
         <div class="sec-label">Contact</div>
         <h2 class="sec-title">Let's connect.</h2>
-        <p class="sec-sub">Open to software engineering internships and industrial placements in London from September 2026. No visa sponsorship required.</p>
+        <p class="sec-sub">Open to graduate software developer and frontend engineering opportunities in the UK from September 2026. No visa sponsorship required.</p>
         <div class="contact-details reveal">
           <div class="contact-row">
             <span class="contact-icon">@</span>
@@ -1668,12 +1507,12 @@
         <div class="open-box">
           <h3>// Open to</h3>
           <div class="open-list">
+            <div class="open-item">Open to graduate frontend engineering and software developer roles in the UK</div>
             <div class="open-item">12-month industrial placement from September 2026</div>
-            <div class="open-item">Summer internships in software engineering</div>
-            <div class="open-item">Full-stack, cloud, or AI/ML-adjacent roles</div>
-            <div class="open-item">London-based or hybrid positions</div>
-            <div class="open-item">Right to work in UK — no sponsorship required</div>
-            <div class="open-item">Notable clients: Bhat-Bhateni Supermarket, Dabur, Nestlé Nepal</div>
+            <div class="open-item">Portfolio focused on Angular, responsive UI and reusable component architecture</div>
+            <div class="open-item">London-based, hybrid, or remote-friendly opportunities</div>
+            <div class="open-item">Right to work in the UK — no sponsorship required</div>
+            <div class="open-item">Delivered interfaces for Bhat-Bhateni Supermarket, Dabur, Nestlé Nepal</div>
           </div>
           <div class="cta-row">
             <a class="btn btn-teal" href="mailto:ranjitkumarmahato169@gmail.com">→ Email Me</a>
@@ -1731,7 +1570,7 @@
         }
       });
     }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal, .slide-left, .slide-right, .slide-up, .zoom-in, .slide-down').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Active nav
     const sections = document.querySelectorAll('section[id]');
